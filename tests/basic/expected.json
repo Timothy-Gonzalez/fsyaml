@@ -1,0 +1,10 @@
+{
+	"a": {
+		"thisIsA": true,
+		"moreItemsShouldWork": 123
+	},
+	"b": {
+		"thisIsB": true,
+		"moreItemsShouldWork": 123
+	}
+}

@@ -1,0 +1,27 @@
+[package]
+name = "fsyaml"
+version = "0.1.0"
+edition = "2021"
+description = "A utility to convert a file system of yaml files to single yaml file"
+documentation = "https://docs.rs/fsyaml"
+readme = "README.md"
+repository = "https://github.com/timothy-gonzalez/fsyaml"
+license = "MIT OR Apache-2.0"
+keywords = ["fs", "yaml", "cli"]
+categories = ["command-line-utilities", "data-structures", "filesystem"]
+
+include = [
+	"src/**/*",
+	"Cargo.toml",
+	"Cargo.lock",
+	"LICENSE_APACHE_2.0",
+	"LICENSE_MIT",
+	"README.md",
+]
+publish = ["fsyaml"]
+
+# Reference: https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap = {version = "3.1.18", features = ["derive", "suggestions"]}
+thiserror = "1.0.31"
