@@ -1,5 +1,5 @@
 use clap::Parser;
-use std::{fs, path::Path};
+use std::path::Path;
 
 /// A utility to convert a file system of yaml files to single yaml file
 #[derive(Debug, Parser)]
@@ -12,34 +12,45 @@ pub struct Command {
 
 impl Command {
 	pub fn run(&self) -> Result<String, Error> {
-		let path = Path::new(&self.root);
-
-		// Check path exists
-		if !path.exists() {
-			return Err(Error::RootDirectoryDoesNotExist(self.root.clone()));
-		}
-
-		// Check is directory
-		let metadata = fs::metadata(path)?;
-
-		if !metadata.is_dir() {
-			return Err(Error::RootDirectoryIsNotADirectory(self.root.clone()));
-		}
+		check_valid_directory(self.root.clone())?;
 
 		// We now have a confirmed directory
+		println!("{}", self.root);
 
 		Ok("wow".to_string())
 	}
 }
 
+fn check_valid_directory(string_path: String) -> Result<(), Error> {
+	let path = Path::new(&string_path);
+
+	// Check path exists
+	if !path.exists() {
+		return Err(Error::DoesNotExist(string_path));
+	}
+
+	// Attempt to get metadata (only fails in inefficient permissions, as path existence is already checked)
+	let metadata = match path.metadata() {
+		Ok(metadata) => metadata,
+		Err(_) => return Err(Error::InsufficientPermissions(string_path.clone())),
+	};
+
+	// Check if path provided is directory
+	if !metadata.is_dir() {
+		return Err(Error::IsNotADirectory(string_path.clone()));
+	}
+
+	Ok(())
+}
+
 #[derive(thiserror::Error, Debug)]
 pub enum Error {
-	#[error("The root directory provided (`{0}`) does not exist")]
-	RootDirectoryDoesNotExist(String),
+	#[error("`{0}` does not exist")]
+	DoesNotExist(String),
 
-	#[error("Failed to read the metadata of the root directory provided")]
-	FailedToReadMetaDataOfRootDirectory(#[from] std::io::Error),
+	#[error("Insufficient permissions to read `{0}`")]
+	InsufficientPermissions(String),
 
-	#[error("The root directory provided (`{0}`) is not a root directory")]
-	RootDirectoryIsNotADirectory(String),
+	#[error("`{0}` is not a directory")]
+	IsNotADirectory(String),
 }
