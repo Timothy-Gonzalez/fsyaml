@@ -1,6 +1,6 @@
 [package]
 name = "fsyaml"
-version = "1.0.0"
+version = "1.0.1"
 edition = "2021"
 description = "Store large, unmanageable yaml files as multiple, manageable ones across your file system."
 documentation = "https://docs.rs/fsyaml"
@@ -18,7 +18,7 @@ include = [
 	"LICENSE_MIT",
 	"README.md",
 ]
-# publish = ["fsyaml"]
+publish = ["fsyaml"]
 
 # Reference: https://doc.rust-lang.org/cargo/reference/manifest.html
 

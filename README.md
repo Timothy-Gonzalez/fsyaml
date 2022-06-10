@@ -2,7 +2,11 @@
 
 Store large, unmanageable yaml files as multiple, manageable ones across your file system.
 
-# Perquisites
+[![Crates.io](https://img.shields.io/crates/v/fsyaml)](https://crates.io/crates/fsyaml) [![Crates.io](https://img.shields.io/crates/d/fsyaml)](https://crates.io/crates/fsyaml) [![GitHub last commit](https://img.shields.io/github/last-commit/timothy-gonzalez/fsyaml)](https://github.com/Timothy-Gonzalez/fsyaml) ![Crates.io](https://img.shields.io/crates/l/fsyaml)
+
+Dual-licensed under [MIT](https://github.com/Timothy-Gonzalez/fsyaml/blob/main/LICENSE_MIT) or [Apache-2.0](https://github.com/Timothy-Gonzalez/fsyaml/blob/main/LICENSE_APACHE_2.0)
+
+# Prerequisites
 
 Before using this tool, you should know the [basics of yaml](https://yaml.org/).
 
@@ -16,7 +20,7 @@ a:
   b: 1
 c:
   d:
-	e: 2
+    e: 2
 ```
 
 It could be restructured in your file system as:
@@ -41,9 +45,22 @@ This allows you to separate out your file, and can make huge files much more mai
 
 If you want more examples, you can also look at the [tests](https://github.com/Timothy-Gonzalez/fsyaml/tree/main/tests), which each contain a root directory and the `expected.yaml` output.
 
-# Usage
+# Install
 
 Once you've set up your file system of `yaml` files, you'll need to eventually combine them all back into one.
+
+To do this, you'll install `fsyaml`.
+
+The easiest way is using cargo, which you can install by [following these instructions](https://doc.rust-lang.org/cargo/getting-started/installation.html).
+
+```bash
+cargo install fsyaml
+```
+
+
+# Usage
+
+Once you've installed `fsyaml`, you can use it like so:
 
 ## Output to a file:
 ```bash
