@@ -18,7 +18,6 @@ include = [
 	"LICENSE_MIT",
 	"README.md",
 ]
-publish = ["fsyaml"]
 
 # Reference: https://doc.rust-lang.org/cargo/reference/manifest.html
 
