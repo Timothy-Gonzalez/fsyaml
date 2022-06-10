@@ -1,10 +1,6 @@
 use clap::Parser;
 use serde_yaml::{Mapping, Value};
-use std::{
-	fs::{self, FileType},
-	io::ErrorKind,
-	path::Path,
-};
+use std::{fs, io::ErrorKind, path::Path};
 
 const SUPPORTED_ENDINGS: [&'static str; 2] = ["yaml", "yml"];
 
