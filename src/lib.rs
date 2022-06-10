@@ -10,23 +10,40 @@ const SUPPORTED_ENDINGS: [&'static str; 2] = ["yaml", "yml"];
 pub struct Command {
 	/// The root directory
 	#[clap()]
-	root: String,
+	pub root: String,
+	/// The file to output to (optional)
+	#[clap()]
+	pub output: Option<String>,
 }
 
 impl Command {
-	pub fn run(&self) -> Result<String, Error> {
+	pub fn run(&self) -> Result<(), Error> {
 		let path = self.root.clone();
 
-		// Validate directory
-		check_valid_directory(path.clone())?;
+		let output = get_yaml_for_dir(path)?;
 
-		let value = get_value_for_dir(path)?;
+		match &self.output {
+			None => println!("{}", output),
+			Some(path) => {
+				fs::write(path, output)
+					.map_err(|error| Error::handle_io_error(path.clone(), error))?;
+			}
+		};
 
-		Ok(serde_yaml::to_string(&value).unwrap())
+		Ok(())
 	}
 }
 
-fn check_valid_directory(string_path: String) -> Result<(), Error> {
+pub fn get_yaml_for_dir(path: String) -> Result<String, Error> {
+	// Validate directory
+	check_valid_dir(path.clone())?;
+
+	let value = get_value_for_dir(path)?;
+
+	Ok(serde_yaml::to_string(&value).unwrap())
+}
+
+fn check_valid_dir(string_path: String) -> Result<(), Error> {
 	let path = Path::new(&string_path);
 
 	// Attempt to get metadata

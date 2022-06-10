@@ -1,7 +1,7 @@
-use std::process;
+use std::{fs, process};
 
 use clap::Parser;
-use fsyaml::Command;
+use fsyaml::{Command, Error};
 
 fn main() {
 	let command = Command::parse();
@@ -11,8 +11,7 @@ fn main() {
 			eprintln!("{}", error);
 			process::exit(1);
 		}
-		Ok(output) => {
-			println!("{}", output);
+		Ok(_) => {
 			process::exit(0);
 		}
 	}
