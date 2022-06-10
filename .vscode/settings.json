@@ -5,5 +5,6 @@
 		"fsyaml",
 		"rustfmt",
 		"thiserror"
-	]
+	],
+	"yaml.format.proseWrap": "preserve"
 }

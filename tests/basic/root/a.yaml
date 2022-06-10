@@ -1,0 +1,11 @@
+boolean: true
+string: wow
+number: 123
+map:
+  a: item
+  b: another item
+  c: a third item
+list:
+  - 1
+  - 2
+  - 3

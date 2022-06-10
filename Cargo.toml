@@ -25,3 +25,4 @@ publish = ["fsyaml"]
 [dependencies]
 clap = {version = "3.1.18", features = ["derive", "suggestions"]}
 thiserror = "1.0.31"
+serde_yaml = "0.8.24"

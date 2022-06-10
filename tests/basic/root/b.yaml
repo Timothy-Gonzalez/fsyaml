@@ -1,0 +1,11 @@
+boolean: false
+string: b
+number: 12345
+map:
+  a: 3
+  b: 2
+  c: 1
+list:
+  - item
+  - another item
+  - a third item
