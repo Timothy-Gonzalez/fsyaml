@@ -1,4 +1,3 @@
-use fsyaml::Command;
 use std::fs;
 
 fn test(path: &str) {
@@ -6,11 +5,8 @@ fn test(path: &str) {
 		.expect("Failed to read expected.yaml")
 		.replace("\r", "");
 
-	let real_output = Command {
-		root: format!("{}/root", path),
-	}
-	.run()
-	.expect("An error occurred");
+	let real_output =
+		fsyaml::get_yaml_for_dir(format!("{}/root", path)).expect("An error occurred");
 
 	assert_eq!(expected_output, real_output)
 }
