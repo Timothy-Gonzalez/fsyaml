@@ -1,7 +1,7 @@
-use std::{fs, process};
+use std::process;
 
 use clap::Parser;
-use fsyaml::{Command, Error};
+use fsyaml::Command;
 
 fn main() {
 	let command = Command::parse();
