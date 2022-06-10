@@ -11,7 +11,7 @@ pub struct Command {
 	/// The root directory
 	#[clap()]
 	pub root: String,
-	/// The file to output to (optional)
+	/// (optional) Outputs to standard output if not provided, otherwise will output to the file specified
 	#[clap()]
 	pub output: Option<String>,
 }
