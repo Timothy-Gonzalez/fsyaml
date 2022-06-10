@@ -1,8 +1,8 @@
 [package]
 name = "fsyaml"
-version = "0.1.0"
+version = "1.0.0"
 edition = "2021"
-description = "A utility to convert a file system of yaml files to single yaml file"
+description = "Store large, unmanageable yaml files as multiple, manageable ones across your file system."
 documentation = "https://docs.rs/fsyaml"
 readme = "README.md"
 repository = "https://github.com/timothy-gonzalez/fsyaml"

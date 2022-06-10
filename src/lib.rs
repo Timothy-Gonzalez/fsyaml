@@ -4,7 +4,7 @@ use std::{fs, io::ErrorKind, path::Path};
 
 const SUPPORTED_ENDINGS: [&'static str; 2] = ["yaml", "yml"];
 
-/// A utility to convert a file system of yaml files to single yaml file
+/// Store large, unmanageable yaml files as multiple, manageable ones across your file system.
 #[derive(Debug, Parser)]
 #[clap(author, version, about)]
 pub struct Command {
