@@ -2,7 +2,7 @@
 
 Store large, unmanageable yaml files as multiple, manageable ones across your file system.
 
-[![Crates.io](https://img.shields.io/crates/v/fsyaml)](https://crates.io/crates/fsyaml) [![Crates.io](https://img.shields.io/crates/d/fsyaml)](https://crates.io/crates/fsyaml) [![GitHub last commit](https://img.shields.io/github/last-commit/timothy-gonzalez/fsyaml)](https://github.com/Timothy-Gonzalez/fsyaml) ![Crates.io](https://img.shields.io/crates/l/fsyaml)
+[![Crates.io](https://img.shields.io/crates/v/fsyaml)](https://crates.io/crates/fsyaml) [![Crates.io](https://img.shields.io/crates/d/fsyaml)](https://crates.io/crates/fsyaml) [![GitHub](https://img.shields.io/github/last-commit/timothy-gonzalez/fsyaml)](https://github.com/Timothy-Gonzalez/fsyaml) ![License](https://img.shields.io/crates/l/fsyaml)
 
 Dual-licensed under [MIT](https://github.com/Timothy-Gonzalez/fsyaml/blob/main/LICENSE_MIT) or [Apache-2.0](https://github.com/Timothy-Gonzalez/fsyaml/blob/main/LICENSE_APACHE_2.0)
 
