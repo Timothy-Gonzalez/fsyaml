@@ -2,7 +2,7 @@ use clap::Parser;
 use serde_yaml::{Mapping, Value};
 use std::{fs, io::ErrorKind, path::Path};
 
-const SUPPORTED_ENDINGS: [&'static str; 2] = ["yaml", "yml"];
+const SUPPORTED_ENDINGS: [&str; 2] = ["yaml", "yml"];
 
 /// Store large, unmanageable yaml files as multiple, manageable ones across your file system.
 #[derive(Debug, Parser)]
@@ -69,7 +69,7 @@ fn get_value_for_dir(path: String) -> Result<Value, Error> {
 // Given a path, iterate it recursively to generate a Mapping representing it
 fn get_map_for_dir(path: String) -> Result<Mapping, Error> {
 	// Get paths in directory
-	let paths: Vec<std::path::PathBuf> = fs::read_dir(path.clone())
+	let paths: Vec<std::path::PathBuf> = fs::read_dir(path)
 		.unwrap()
 		.map(|res| res.unwrap())
 		.map(|entry| entry.path())
