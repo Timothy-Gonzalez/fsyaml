@@ -1,6 +1,6 @@
 [package]
 name = "fsyaml"
-version = "1.0.1"
+version = "1.0.0"
 edition = "2021"
 description = "Store large, unmanageable yaml files as multiple, manageable ones across your file system."
 documentation = "https://docs.rs/fsyaml"
