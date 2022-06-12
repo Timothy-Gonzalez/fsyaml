@@ -53,12 +53,22 @@ Once you've set up your file system of `yaml` files, you'll need to eventually c
 
 To do this, you'll install `fsyaml`.
 
-The easiest way is using cargo, which you can install by [following these instructions](https://doc.rust-lang.org/cargo/getting-started/installation.html).
+## Through Releases
 
+One way is by release binary from the [latest release](https://github.com/Timothy-Gonzalez/fsyaml/releases/latest).
+
+On windows, you can add it to any folder as long as you add that folder to the path.
+
+On linux, simply add it to your `bin` folder.
+
+## With Cargo
+
+Another way is using cargo, which you can install by [following these instructions](https://doc.rust-lang.org/cargo/getting-started/installation.html).
+
+After that, you can run a simple command in your terminal:
 ```bash
 cargo install fsyaml
 ```
-
 
 # Usage
 
