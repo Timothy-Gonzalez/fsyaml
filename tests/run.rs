@@ -23,6 +23,6 @@ pub fn readme_example() {
 }
 
 #[test]
-pub fn basic() {
-	test("tests/basic")
+pub fn advanced() {
+	test("tests/advanced")
 }
