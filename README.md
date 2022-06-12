@@ -43,7 +43,9 @@ e: 2
 
 This allows you to separate out your file, and can make huge files much more maintainable.
 
-If you want more examples, you can also look at the [tests](https://github.com/Timothy-Gonzalez/fsyaml/tree/main/tests), which each contain a root directory and the `expected.yaml` output.
+To see the above example in action, you can visit [tests/readme_example](https://github.com/Timothy-Gonzalez/fsyaml/tree/main/tests/readme_example).
+
+For more examples, see [tests](https://github.com/Timothy-Gonzalez/fsyaml/tree/main/tests), which each contain a root directory and the `expected.yaml` output.
 
 # Install
 

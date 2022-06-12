@@ -18,6 +18,11 @@ fn test(path: &str) {
 }
 
 #[test]
+pub fn readme_example() {
+	test("tests/readme_example")
+}
+
+#[test]
 pub fn basic() {
 	test("tests/basic")
 }
