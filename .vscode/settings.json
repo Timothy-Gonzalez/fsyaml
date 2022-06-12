@@ -2,6 +2,7 @@
 	"editor.insertSpaces": false,
 	"editor.detectIndentation": false,
 	"cSpell.words": [
+		"clippy",
 		"fsyaml",
 		"rustfmt",
 		"thiserror"
