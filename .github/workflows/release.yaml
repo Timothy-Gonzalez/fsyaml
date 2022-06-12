@@ -70,8 +70,6 @@ jobs:
         run: |
           mkdir staging
 
-          ls output
-
           if [ "${{ matrix.host }}" = "windows" ]; then
             cp "output/release/fsyaml.exe" staging/
             cd staging
