@@ -89,11 +89,11 @@ jobs:
         with:
           upload_url: ${{ needs.create-release.outputs.upload_url }}
           asset_path: release.zip
-          asset_name: ${{ env.BIN }}-${{ github.ref_name }}-${{ matrix.target }}.zip
+          asset_name: fsyaml-${{ github.ref_name }}-${{ matrix.target }}.zip
           asset_content_type: application/octet-stream
 
       - name: Upload Archive as Artifact
         uses: actions/upload-artifact@v3
         with:
-          name: ${{ env.BIN }}-${{ github.ref_name }}-${{ matrix.target }}.zip
+          name: fsyaml-${{ github.ref_name }}-${{ matrix.target }}.zip
           path: release.zip
