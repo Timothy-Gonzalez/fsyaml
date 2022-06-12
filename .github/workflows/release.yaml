@@ -70,14 +70,14 @@ jobs:
         run: |
           mkdir staging
 
-          ls
+          ls output
 
           if [ "${{ matrix.host }}" = "windows" ]; then
-            cp "output/release/$BIN.exe" staging/
+            cp "output/release/fsyaml.exe" staging/
             cd staging
             7z a ../release.zip *
           else
-            cp "output/release/$BIN" staging/
+            cp "output/release/fsyaml" staging/
             cd staging
             zip ../release.zip *
           fi
