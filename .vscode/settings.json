@@ -4,6 +4,7 @@
 	"cSpell.words": [
 		"clippy",
 		"fsyaml",
+		"mkdir",
 		"rustfmt",
 		"thiserror"
 	],
