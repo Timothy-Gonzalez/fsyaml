@@ -74,7 +74,7 @@ jobs:
         run: |
           mkdir staging
 
-          if [ "${{ matrix.os }}" = "windows-latest" ]; then
+          if [ "${{ matrix.runs-on }}" = "windows-latest" ]; then
             cp "output/release/fsyaml.exe" staging/
             cd staging
             7z a ../release.zip *
