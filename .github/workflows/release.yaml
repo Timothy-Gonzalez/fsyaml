@@ -28,25 +28,29 @@ jobs:
       fail-fast: false
       matrix:
         # https://doc.rust-lang.org/rustc/platform-support.html
+        # We build all the tier-1 targets at the link above. Should users need a less common target, they can always build it themselves.
         include:
-          - host: linux
-            os: ubuntu-latest
-            target: x86_64-unknown-linux-gnu
-
-          - host: windows
-            os: windows-latest
+          - label: 64-bit-windows
             target: x86_64-pc-windows-msvc
-
-          - host: macos
-            os: macos-latest
+            runs-on: windows-latest
+          - label: 32-bit-windows
+            target: i686-pc-windows-msvc
+            runs-on: windows-latest
+          - label: 64-bit-linux
+            target: x86_64-unknown-linux-gnu
+            runs-on: ubuntu-latest
+          - label: 32-bit-linux
+            target: i686-unknown-linux-gnu
+            runs-on: ubuntu-latest
+          - label: arm64-linux
+            target: aarch64-unknown-linux-gnu
+            runs-on: ubuntu-latest
+          - label: 64-bit-macos
             target: x86_64-apple-darwin
-
-          - host: macos
-            os: macos-latest
-            target: aarch64-apple-darwin
+            runs-on: macos-latest
 
     name: Build (${{ matrix.target }})
-    runs-on: ${{ matrix.os }}
+    runs-on: ${{ matrix.runs-on }}
     steps:
       - uses: actions/checkout@v3
         with:
@@ -70,7 +74,7 @@ jobs:
         run: |
           mkdir staging
 
-          if [ "${{ matrix.host }}" = "windows" ]; then
+          if [ "${{ matrix.os }}" = "windows-latest" ]; then
             cp "output/release/fsyaml.exe" staging/
             cd staging
             7z a ../release.zip *
@@ -87,11 +91,11 @@ jobs:
         with:
           upload_url: ${{ needs.create-release.outputs.upload_url }}
           asset_path: release.zip
-          asset_name: fsyaml-${{ github.ref_name }}-${{ matrix.target }}.zip
+          asset_name: fsyaml-${{ github.ref_name }}-${{ matrix.label }}.zip
           asset_content_type: application/octet-stream
 
       - name: Upload Archive as Artifact
         uses: actions/upload-artifact@v3
         with:
-          name: fsyaml-${{ github.ref_name }}-${{ matrix.target }}.zip
+          name: fsyaml-${{ github.ref_name }}-${{ matrix.label }}.zip
           path: release.zip
