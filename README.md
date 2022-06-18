@@ -79,8 +79,6 @@ Once you've installed `fsyaml`, you can use it like so:
 fsyaml path/to/root output.yaml
 ```
 
-<br>
-
 ## Output as a stream:
 
 ```bash
