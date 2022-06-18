@@ -93,4 +93,6 @@ fsyaml path/to/root > output.yaml
 This is a list of limitations to `fsyaml` that are not currently supported. If you'd like to tackle one of them, feel free to open a pull request!
 
 * Lists by file structure is not supported (only maps)
+* Maps by file structure are not order-consistent across platforms
+* Merge keys are not supported (unsure about this, not technically official YAML spec)
 * Symbolic linking is not supported
