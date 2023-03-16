@@ -1,10 +1,15 @@
-# fsyaml
+<div align="center">
+
+<img src="res/dark_logo.png#gh-dark-mode-only" alt="fsyaml" width="400px"></img>
+<img src="res/light_logo.png#gh-light-mode-only" alt="fsyaml" width="400px"></img>
+
+[![Crates.io](https://img.shields.io/crates/v/fsyaml?style=for-the-badge)](https://crates.io/crates/fsyaml)
+[![Crates.io](https://img.shields.io/crates/d/fsyaml?style=for-the-badge)](https://crates.io/crates/fsyaml)
+![License](https://img.shields.io/crates/l/fsyaml?style=for-the-badge)
 
 Store large, unmanageable yaml files as multiple, manageable ones across your file system.
 
-[![Crates.io](https://img.shields.io/crates/v/fsyaml)](https://crates.io/crates/fsyaml) [![Crates.io](https://img.shields.io/crates/d/fsyaml)](https://crates.io/crates/fsyaml) [![GitHub](https://img.shields.io/github/last-commit/timothy-gonzalez/fsyaml)](https://github.com/Timothy-Gonzalez/fsyaml) ![License](https://img.shields.io/crates/l/fsyaml)
-
-Dual-licensed under [MIT](https://github.com/Timothy-Gonzalez/fsyaml/blob/main/LICENSE_MIT) or [Apache-2.0](https://github.com/Timothy-Gonzalez/fsyaml/blob/main/LICENSE_APACHE_2.0)
+</div>
 
 # Prerequisites
 
@@ -94,3 +99,7 @@ This is a list of limitations to `fsyaml` that are not currently supported. If y
 * Maps by file structure are not order-consistent across platforms
 * Merge keys are not supported (unsure about this, not technically official YAML spec)
 * Symbolic linking is not supported
+
+# License
+
+Dual-licensed under [MIT](https://github.com/Timothy-Gonzalez/fsyaml/blob/main/LICENSE_MIT) or [Apache-2.0](https://github.com/Timothy-Gonzalez/fsyaml/blob/main/LICENSE_APACHE_2.0)
